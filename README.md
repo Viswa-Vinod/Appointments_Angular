@@ -1,3 +1,21 @@
+# Assumptions:
+
+1. Appointments are between two users only,each user having a unique id
+2. Each appointment has a unique id.The appointment id is one more than its positions in an appointment objects array
+3. The appointment data model is applicable
+4. json-mock backend database running on localhost:3000
+
+# Following have not yet been done:
+
+(i) acceptance of an appointment by the "acceptor" that changes the appointment status to confirmed
+(ii) getting user list from DB as a dropdown list when choosing whom to have the appointment with
+(iii) http put request through angular 4 http.put method. Currently it is using basic javascript fetch method. I have not been able to make http put requests through angular work
+(iv) consistent settings on date and time; it is UTC time in some places and local time in others
+(v) robust working of google maps api; currently only safe easily spotted landmarks will work against the APIs; no error handling has been implemented
+(vi) dragging of events from one day to another
+(vii) deletion of appointments 
+
+
 # Poc
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
@@ -26,3 +44,4 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
