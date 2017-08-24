@@ -7,13 +7,13 @@
 
 # Following have not yet been done:
 
-(i) acceptance of an appointment by the "acceptor" that changes the appointment status to confirmed
-(ii) getting user list from DB as a dropdown list when choosing whom to have the appointment with
-(iii) http put request through angular 4 http.put method. Currently it is using basic javascript fetch method. I have not been able to make http put requests through angular work
-(iv) consistent settings on date and time; it is UTC time in some places and local time in others
-(v) robust working of google maps api; currently only safe easily spotted landmarks will work against the APIs; no error handling has been implemented
-(vi) dragging of events from one day to another
-(vii) deletion of appointments 
+1. acceptance of an appointment by the "acceptor" that changes the appointment status to confirmed
+2. getting user list from DB as a dropdown list when choosing whom to have the appointment with
+3. http put request through angular 4 http.put method. Currently it is using basic javascript fetch method. I have not been able to make http put requests through angular work
+4. consistent settings on date and time; it is UTC time in some places and local time in others
+5. robust working of google maps api; currently only safe easily spotted landmarks will work against the APIs; no error handling has been implemented
+6. dragging of events from one day to another
+7. deletion of appointments 
 
 
 # Poc
