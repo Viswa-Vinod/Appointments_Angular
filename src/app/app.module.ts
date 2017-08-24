@@ -65,7 +65,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     SimpleNotificationsModule.forRoot(),
     RouterModule.forRoot(appRoutes),
-    AgmCoreModule.forRoot({apiKey: "AIzaSyDpDH1L1XkSf78Kj9GHBqY7kaOFDnd_X3c"})
+    AgmCoreModule.forRoot({apiKey: "API_KEY"})
   ],
   providers: [AuthService, DataService, ApptService, EtaService, GoogleMapsAPIWrapper, AuthGuard],
   bootstrap: [AppComponent]
