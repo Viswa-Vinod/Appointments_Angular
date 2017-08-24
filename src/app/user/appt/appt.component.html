@@ -1,0 +1,112 @@
+<agm-map>
+  <sebm-google-map-directions [origin]="origin" [destination]="destination"></sebm-google-map-directions>
+</agm-map>
+
+<div class="row" *ngIf = "appt">
+	<div class="col-xs-12 text-center">
+		<h2>Appointment Purpose: {{appt.Purpose}}</h2>	
+	</div>
+</div>
+
+<div class="row" *ngIf = "appt">
+	<div class="col-xs-4">
+		<div class="btn-group" appDropdown>
+			<button type="button" 
+				class="btn btn-primary dropdown-toggle">
+				Manage Appt <span class="caret"></span>
+			</button>
+
+			<ul class="dropdown-menu">
+				
+				<li><a (click)="onEdit()" style="cursor:pointer">Edit Appt</a></li>
+				<li><a style="cursor:pointer" (click)="onDelete()">Delete Appt</a></li>				
+				<li><a style="cursor:pointer" (click)="onLeaving()">Leaving Now</a></li>
+			</ul>			
+		</div>		
+	</div>
+	<div class="col-xs-8" *ngIf = "appt && origin.length > 0">
+		<form class="form-inline">
+		<div class="form-group">
+				    <label for="UserLocation">Current Location of User</label>
+				    <input type="text" class="form-control" id="UserLocation" [value] = "origin" disabled>
+		</div>
+		<div class="form-group" *ngIf = "userETA && userETA.length > 0">
+				    <label for="UserETA">Expected userETA</label>
+				    <input type="text" class="form-control" id="UserETA" [value] = "userETA" disabled>
+		</div>
+		</form>
+		
+	</div>
+</div>
+<hr/>
+<div class="row" *ngIf = "appt">
+	<div class="col-xs-12">
+		<form (ngSubmit) = "onSubmit()" [formGroup] = "apptForm" >
+			<div class="form-inline"> 
+				<div class="form-group">
+				    <label for="apptID">Appt ID</label>
+				    <input type="text" class="form-control" id="apptID" value="{{appt.id}}" formControlName = "apptID"  required>
+				 </div>
+				 <div class="form-group">
+				    <label for="date">Date</label>
+				    <input type="text" class="form-control" id="date" value="{{appt.date}}" formControlName = "date"  required>
+				 </div>
+				 
+				
+				  <div class="form-group">
+				    <label for="StartTime">StartTime</label>
+				    <input type="text" class="form-control" id="StartTime" value="{{appt.StartTime | date:'jm'}}" formControlName = "StartTime"  required>
+				  </div>
+				  <div class="form-group">
+				    <label for="EndTime">EndTime</label>
+				    <input type="text"  class="form-control" id="EndTime" value="{{appt.EndTime | date:'jm'}}" formControlName = "EndTime"  required>
+				  </div>
+		  	</div>
+		  <hr/>
+		  	<div class="form-inline">
+			  <div class="form-group">
+			    <label for="RequestorID">RequestorID</label>
+			    <input type="text"  class="form-control" id="RequestorID" value="{{appt.RequestorID}}" formControlName = "RequestorID"  required #reqID>			    
+			  </div>
+
+			  <div class="form-group">
+			    <label for="AcceptorID">AcceptorID</label>
+			    <input type="text" class="form-control" id="AcceptorID" value="{{appt.AcceptorID}}" formControlName = "AcceptorID"  required #accID>
+			  </div>
+ 
+			</div> 
+			<hr/>
+			<div class="form-inline">	
+			 <div class="form-group">
+			    <label for="Venue">Venue</label>
+			    <input type="text" class="form-control" id="Venue" value="{{appt.Venue}}" formControlName = "Venue"  required>
+			 </div>
+			 <div class="checkbox" *ngIf = "userID==accID.value">
+    			<label for="AcceptorReminder">
+      				<input type="checkbox" id="AcceptorReminder" formControlName = "AcceptorReminder"> Acceptor Reminder Required
+    			</label>
+  			</div>
+  			<div class="checkbox" *ngIf = "userID==reqID.value">
+    			<label for="RequestorReminder">
+      				<input type="checkbox" id="RequestorReminder" formControlName = "RequestorReminder"> Requestor Reminder Required
+    			</label>
+  			</div>
+  			  <div class="form-group" *ngIf = "reqStatus.ETA || appt.RequestorStatus.ETA">  
+			    <label for="RequestorStatus">RequestorStatus</label>
+			    <input type="text" class="form-control" id="RequestorStatus"  formControlName = "RequestorStatus"
+			    	value = "">
+			 </div>
+			 <div class="form-group" *ngIf = "accStatus.ETA || appt.AcceptorStatus.ETA">  
+			    <label for="AcceptorStatus">AcceptorStatus</label> 
+			    <input type="text" class="form-control" id="AcceptorStatus" formControlName = "AcceptorStatus"
+			    value = "">
+			 </div>
+		 	</div>
+		 <hr/>
+		  <button type="submit" class="btn btn-default">Submit</button>
+		</form>
+	</div>	
+	
+</div>
+
+

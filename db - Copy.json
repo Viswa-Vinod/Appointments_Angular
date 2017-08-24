@@ -1,0 +1,111 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "vkviswa@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": 2,
+      "email": "vinod@gmail.com",
+      "password": "password"
+    },
+    {
+      "email": "lax@gmail.com",
+      "password": "pass",
+      "id": "70efa320-99e5-4e90-91f6-90e67f28d51c"
+    },
+    {
+      "email": "pradeep@gmail.com",
+      "password": "pass",
+      "id": "25993f82-1f49-4882-9646-74066ff73d53"
+    },
+    {
+      "email": "vikas@gmail.com",
+      "password": "pass",
+      "id": 3
+    },
+    {
+      "email": "vimal@gmail.com",
+      "password": "pass",
+      "id": 4
+    }
+  ],
+  "appointments": [
+    {
+      "id": 1,
+      "date": "2017-08-02",
+      "StartTime": "2017-08-02 11:00",
+      "EndTime": "2017-08-02 12:30",
+      "RequestorID": 1,
+      "AcceptorID": 2,
+      "Purpose": "medical checkup",
+      "Location": "Brigade Millenium, Bangalore",
+      "Status": "Confirmed",
+      "RequestorStatus": {},
+      "AcceptorStatus": {},
+      "RequestorReminder": true,
+      "AcceptorReminder": false
+    },
+    {
+      "id": 2,
+      "date": "2017-08-03",
+      "StartTime": "2017-08-03 14:00",
+      "EndTime": "2017-08-03 15:30",
+      "RequestorID": 1,
+      "AcceptorID": 2,
+      "Purpose": "medical checkup",
+      "Location": "The Forum Mall, Bangalore",
+      "Status": "UnConfirmed",
+      "RequestorStatus": {},
+      "AcceptorStatus": {},
+      "RequestorReminder": true,
+      "AcceptorReminder": false
+    },
+    {
+      "id": 3,
+      "date": "2017-08-04",
+      "StartTime": "2017-08-04 11:00",
+      "EndTime": "2017-08-04 12:30",
+      "RequestorID": 2,
+      "AcceptorID": 1,
+      "Purpose": "medical checkup",
+      "Location": "RMZ Ecospace, Bangalore",
+      "Status": "Confirmed",
+      "RequestorStatus": {},
+      "AcceptorStatus": {},
+      "RequestorReminder": true,
+      "AcceptorReminder": false
+    },
+    {
+      "id": 4,
+      "date": "2017-08-05",
+      "StartTime": "2017-08-05 11:00",
+      "EndTime": "2017-08-05 12:30",
+      "RequestorID": 2,
+      "AcceptorID": 1,
+      "Purpose": "medical checkup",
+      "Location": "Brigade Millenium, Bangalore",
+      "Status": "Confirmed",
+      "RequestorStatus": {},
+      "AcceptorStatus": {},
+      "RequestorReminder": false,
+      "AcceptorReminder": false
+    },
+    {
+      "id": 5,
+      "date": "2017-08-05",
+      "StartTime": "2017-08-05 11:00",
+      "EndTime": "2017-08-05 12:30",
+      "RequestorID": 2,
+      "AcceptorID": 3,
+      "Purpose": "medical checkup",
+      "Location": "Brigade Millenium, Bangalore",
+      "Status": "Confirmed",
+      "RequestorStatus": {},
+      "AcceptorStatus": {},
+      "RequestorReminder": false,
+      "AcceptorReminder": false
+    }
+  ]
+}
